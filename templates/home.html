@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h2>Pokemon Data</h2>
+      <form method="GET" action=".">
+         <input type="search" class="form-control rounded" placeholder="Search by Type" aria-label="Search"
+            aria-describedby="search-addon" name="type1_contains" />
+         <button type="submit">Search</button>
+      </form>
+      <table style="width:100%" border="1">
+         <tr>
+            <th>#</th>
+            <th><a href="?order_by=name">name</a></th>
+            <th>type1</th>
+            <th>type2</th>
+            <th><a href="?order_by=-total">total</a></th>
+            <th>hp</th>
+            <th>attack</th>
+            <th>defense</th>
+            <th>sp_atk</th>
+            <th>sp_def</th>
+            <th>speed</th>
+            <th>generation</th>
+            <th>legendary</th>
+         </tr>
+         {% for result in data %}
+         <tr>
+            <td>{{ result.id_pokemon }}</td>
+            <td>{{ result.name }}</td>
+            <td>{{ result.type1 }}</td>
+            <td>{{ result.type2 }}</td>
+            <td>{{ result.total }}</td>
+            <td>{{ result.hp }}</td>
+            <td>{{ result.attack }}</td>
+            <td>{{ result.defense }}</td>
+            <td>{{ result.sp_atk }}</td>
+            <td>{{ result.sp_def }}</td>
+            <td>{{ result.speed }}</td>
+            <td>{{ result.generation }}</td>
+            <td>{{ result.legendary }}</td>
+         </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
